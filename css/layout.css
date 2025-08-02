@@ -9,9 +9,9 @@
    a. General and Common Styles
    b. Header Styles
    c. Hero Section
-   d. Features Section
-   e. Pricing Section
-   f. Screenshots Section
+   d. how-it-works Section
+   e. why-us Section
+   f. reviews Section
    g. Call To Action Section
    h. Testimonials Section
    i. Subscribe Section
@@ -165,7 +165,7 @@ ul#nav li.current a { color: #fff; }
 
 #hero {
    padding-top: 66px;
-   background: #23292f url(img/hero-bg.png);
+   background: white url(img/hero-bg.png);
    overflow: hidden;
 }
 
@@ -175,7 +175,7 @@ ul#nav li.current a { color: #fff; }
 (min-resolution: 192dpi) {
 
 	#hero { 
-		background: #23292f url(img/hero-bg_@2X.png); 
+		background: white url(img/hero-bg_@2X.png); 
 		background-size: 200px 200px;
 	}
   
@@ -185,7 +185,7 @@ ul#nav li.current a { color: #fff; }
 
 /* Hero Text */
 .hero-text {
-	color: #676e73;
+	color: white;
    width: 83%;
    text-align: center;
    margin: 54px auto 24px auto;
@@ -227,7 +227,7 @@ ul#nav li.current a { color: #fff; }
    letter-spacing: 2px;
 }
 #hero .buttons .trial {
-   background: #f64b39;
+   background: #10999E;
    margin-right: 30px;
 
    -webkit-animation-delay: 10s;
@@ -237,33 +237,33 @@ ul#nav li.current a { color: #fff; }
    -webkit-animation-iteration-count: 3;
       -moz-animation-iteration-count: 3;  
 }
-#hero .buttons .trial:hover { background: #F86A5A; }
+#hero .buttons .trial:hover { background: #11ABB0; }
 #hero .buttons .learn-more {}
 
 
 /* ------------------------------------------------------------------ */
-/* d. Features Section
+/* d. how-it-works Section
 /* ------------------------------------------------------------------ */
 
-#features {
+#how-it-works {
    background: #fff;
-   padding-top: 96px;
-   padding-bottom: 78px;
+   padding-top: 40px;
+   padding-bottom: 40px;
    overflow: hidden;
 }
-#features .feature {
+#how-it-works .feature {
    margin-top: 30px;
    margin-bottom: 54px;
 }
-#features .right {
+#how-it-works .right {
    padding-left: 32px;
    float: right;   
 }
-#features .left {
+#how-it-works .left {
    padding-right: 32px;
    float: left;   
 }
-#features h3 {
+#how-it-works h3 {
    font: 16px/24px 'montserrat-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
@@ -273,10 +273,10 @@ ul#nav li.current a { color: #fff; }
 
 
 /*----------------------------------------------*/
-/*	e. Pricing Section
+/*	e. why-us Section
 /*----------------------------------------------*/
 
-#pricing {
+#why-us {
 	background: #F7F7F7;
    padding-top: 107px;
    padding-bottom: 77px;   
@@ -284,7 +284,7 @@ ul#nav li.current a { color: #fff; }
    border-bottom: 1px solid #F0F0F0;
    text-align: center;
 }
-#pricing .price-block {
+#why-us .price-block {
    background: #fff;
    border: 1px solid #E6E6E6;
    text-align: center;
@@ -320,16 +320,16 @@ ul#nav li.current a { color: #fff; }
 	margin-top: 0;
 }
 
-ul.features {
+ul.how-it-works {
    margin: 12px 0 0 0;
    list-style: none;
 }
-ul.features li {
+ul.how-it-works li {
    line-height: 39px;
    margin-bottom: 0;
 }
-ul.features li:nth-child(odd) { }
-ul.features li:nth-child(even) { }
+ul.how-it-works li:nth-child(odd) { }
+ul.how-it-works li:nth-child(even) { }
 
 .plan-sign-up {
   	padding: 24px 15px;
@@ -344,10 +344,10 @@ ul.features li:nth-child(even) { }
 
 
 /* ------------------------------------------------------------------ */
-/* c. Screenshots
+/* c. reviews
 /* ------------------------------------------------------------------ */
 
-#screenshots {
+#reviews {
    background: #fff url(img/grey.png);
    padding-top: 96px;
    padding-bottom: 120px;
@@ -358,7 +358,7 @@ ul.features li:nth-child(even) { }
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
-   #screenshots {
+   #reviews {
       background: #fff url(img/grey_@2X.png);
       background-size: 397px 322px;
    }
@@ -366,7 +366,7 @@ ul.features li:nth-child(even) { }
 }
 
 /* Portfolio Content */
-#screenshots-wrapper .columns { padding: 0; }
+#reviews-wrapper .columns { padding: 0; }
 .item .item-wrap {
    background: #fff;
    overflow: hidden;
