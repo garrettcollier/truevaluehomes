@@ -597,11 +597,11 @@ legend {
    color: #3d4145;
    display: block;
 }
-label span,
+/* label span,
 legend span {
 	color: #8B9798;
    font: 14px/24px 'opensans-regular', sans-serif;
-}
+} */
 
 input[type="checkbox"],
 input[type="radio"] {
