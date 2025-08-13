@@ -479,6 +479,17 @@ ul.how-it-works li {
    color:#111;
    box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
 }
+.lead-form select{
+   
+   width:100%;
+   border:none;
+   border-radius:24px;            /* pill look */
+   padding:16px 18px;
+   font-size:12px;
+   background:#fff;
+   color:#111;
+   box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+}
 .lead-form input::placeholder{ color:#8a8f98; }
 .lead-form .cta{
    width:100%;
@@ -487,12 +498,14 @@ ul.how-it-works li {
    border-radius:26px;
    padding:16px 18px;
    font-weight:700;
-   font-size:12px;
+   font-size:15px;
    background:#111;            /* light blue button */
    color:#fff;
    cursor:pointer;
 }
-.lead-form .cta:hover{ filter:brightness(.95); }
+.lead-form .cta:hover { 
+   filter:brightness(.80); 
+}
 .lead-form .call-us{
    text-align:center; 
    margin-top:16px; 

@@ -151,24 +151,84 @@
             </div>
             
             <form action="https://formspree.io/f/mldlzgro" method="POST" class="lead-form" autocomplete="on">
-               <label>
+               <!-- Formspree helpers (optional but useful) -->
+               <input type="hidden" name="_subject" value="New Lead: Get an Offer Now">
+               <!-- Replace with your thank-you page if you have one -->
+               <input type="hidden" name="_next" value="/thank-you.html">
+               <!-- Honeypot field to trap bots -->
+               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+               
+               <label for="lead-name">
                   <span>Name *</span>
-                  <input type="text" name="name" required>
+                  <input id="lead-name" type="text" name="name" autocomplete="name" required>
                </label>
       
-               <label>
+               <label for="lead-phone">
                   <span>Phone Number *</span>
-                  <input type="tel" name="phone" inputmode="tel" required>
-               </label>
+                  <input
+                    id="lead-phone"
+                    type="tel"
+                    name="phone"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    pattern="^\+?1?[ \-]?\(?\d{3}\)?[ \-]?\d{3}[ \-]?\d{4}$"
+                    placeholder="(555) 555-1234"
+                    required>
+                </label>
       
-               <label>
+               <label for="lead-address">
                   <span>Address *</span>
-                  <input type="text" name="address" placeholder="Enter a location" required>
+                  <input
+                  id="lead-address"
+                  type="text"
+                  name="address"
+                  autocomplete="street-address"
+                  placeholder="123 Main St, City, ST"
+                  required>
                </label>
       
+               <label for="lead-reason">
+                  <span>Reason for Selling *</span>
+                  <select id="lead-reason" name="reason" required>
+                     <option value="">-- Please Select --</option>
+                     <option value="Relocating">Relocating</option>
+                     <option value="Inherited Property">Inherited Property</option>
+                     <option value="Foreclosure">Facing Foreclosure</option>
+                     <option value="Divorce">Divorce</option>
+                     <option value="Downsizing">Downsizing</option>
+                     <option value="Needs Repairs">Needs Repairs</option>
+                     <option value="Job Loss">Job Loss</option>
+                     <option value="Tired Landlord">Tired Landlord</option>
+                     <option value="Other">Other</option>
+                  </select>
+               </label>
+
                <label>
+                  <span>Preferred Selling Timeline</span>
+                  <select name="timeline">
+                     <option value="">-- Please Select --</option>
+                     <option value="As Soon As Possible">As Soon As Possible</option>
+                     <option value="Within 30 Days">Within 30 Days</option>
+                     <option value="1-3 Months">1-3 Months</option>
+                     <option value="3+ Months">3+ Months</option>
+                     <option value="Undecided">Undecided</option>
+                  </select>
+               </label>
+
+               <label>
+                  <span>How Soon Should We Contact You?</span>
+                  <select name="contact_time">
+                     <option value="">-- Please Select --</option>
+                     <option value="Immediately">Immediately</option>
+                     <option value="Within 24 Hours">Within 24 Hours</option>
+                     <option value="Within 3 Days">Within 3 Days</option>
+                     <option value="Next Week">Next Week</option>
+                  </select>
+               </label>
+
+               <label for="lead-email">
                   <span>Email</span>
-                  <input type="email" name="email">
+                  <input id="lead-email" type="email" name="email" autocomplete="email" placeholder="you@example.com">
                </label>
       
                <button type="submit" class="cta">Get My Cash Offer Now!</button>
