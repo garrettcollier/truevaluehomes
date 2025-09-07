@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Purchase Agreement Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Purchase Agreement Form</h2>
+  <form id="purchaseForm">
+    <label>Seller First Name
+      <input type="text" name="Seller.FirstName" required>
+    </label>
+    <label>Seller Last Name
+      <input type="text" name="Seller.LastName" required>
+    </label>
+    <label>Seller Email
+      <input type="email" name="Seller.Email" required>
+    </label>
+    <label>Seller Phone
+      <input type="text" name="Seller.Phone">
+    </label>
+
+    <h3>Property Info</h3>
+    <label>Street Address
+      <input type="text" name="Seller.Property.StreetAddress" required>
+    </label>
+    <label>City
+      <input type="text" name="Seller.Property.City" required>
+    </label>
+    <label>State
+      <input type="text" name="Seller.Property.State" required>
+    </label>
+    <label>Postal Code
+      <input type="text" name="Seller.Property.PostalCode" required>
+    </label>
+    <label>APN (Parcel Number)
+        <input type="text" name="Seller.Property.APN" required>
+    </label>
+
+    <h3>Sale Info</h3>
+    <label>Purchase Price (Numbers)
+      <input type="number" name="Purchase.Price" required>
+    </label>
+    <label>Purchase Price (Words)
+      <input type="text" name="Purchase.Price.Words" required>
+    </label>
+    <label>Closing Date
+      <input type="date" name="Seller.Sell.Date" required>
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("purchaseForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = {};
+      formData.forEach((value, key) => { data[key] = value });
+  
+      const response = await fetch("/send-agreement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+  
+      const result = await response.json();
+      alert("Agreement sent! Envelope ID: " + result.envelopeId);
+    });
+  </script>
+</body>
+</html>
