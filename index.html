@@ -150,15 +150,12 @@
                <h3>Get an Offer Now!</h3>
             </div>
             
-            <form action="https://script.google.com/macros/s/AKfycbwDGic_lLOzBo6bZd2laMsOnCXpvJPe2AYh6SY8RVZonRfXU6eD_61E1bP3_-gDGhrO/exec" method="POST" class="lead-form" autocomplete="on" accept-charset="UTF-8">
+            <form id="lead-form" class="lead-form" autocomplete="on">
                
                <!-- REQUIRED: shared token; must match EXPECTED in Apps Script -->
                <input type="hidden" name="token" value="tvh2025secure">
 
-               <!-- redirect handled after form submission -->
-               <input type="hidden" name="redirect" value="https://truevaluehomes.net/thank-you.html">
-
-               <!-- Honeypot (script checks hp_trap) -->
+               <!-- Honeypot bot submission field, if filled then bot as spam bots fill every field, response is ignored (doesn’t log it, doesn’t email)-->
                <input type="text" name="hp_trap" style="display:none" tabindex="-1" autocomplete="off">
                
                <label for="lead-first">
