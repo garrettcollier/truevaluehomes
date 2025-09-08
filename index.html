@@ -155,8 +155,8 @@
                <!-- REQUIRED: shared token; must match EXPECTED in Apps Script -->
                <input type="hidden" name="token" value="tvh2025secure">
 
-               <!-- Optional redirect handled by the script -->
-               <input type="hidden" name="redirect" value="/thank-you.html">
+               <!-- redirect handled after form submission -->
+               <input type="hidden" name="redirect" value="https://truevaluehomes.net/thank-you.html">
 
                <!-- Honeypot (script checks hp_trap) -->
                <input type="text" name="hp_trap" style="display:none" tabindex="-1" autocomplete="off">
@@ -525,6 +525,28 @@
    <script src="js/imagelightbox.js"></script>
    <script src="js/jquery.prettyPhoto.js"></script>   
    <script src="js/main.js"></script>
+
+   <script>
+      document.getElementById('lead-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // stop default form action
+        const form = e.target;
+        const data = new FormData(form);
+      
+        fetch("https://script.google.com/macros/s/AKfycbwDGic_lLOzBo6bZd2laMsOnCXpvJPe2AYh6SY8RVZonRfXU6eD_61E1bP3_-gDGhrO/exec", {
+            method: "POST",
+            body: data
+        })
+        .then(res => res.json())
+        .then(res => {
+            // Redirect user directly to your branded page
+            window.location.href = "https://truevaluehomes.net/thank-you.html";
+        })
+        .catch(err => {
+            // fallback redirect even if the fetch fails
+            window.location.href = "https://truevaluehomes.net/thank-you.html";
+        });
+      });
+   </script>
 
 </body>
 
