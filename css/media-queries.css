@@ -374,11 +374,30 @@
 
 }
 
+/* Hide "Three Easy Steps" on mobile */
+@media only screen and (max-width: 768px) {
+   #how-it-works .left {
+     display: none !important;
+   }
+}
 
+/* Hide "Benefits of Selling With Us" comparison table on mobile */
+@media only screen and (max-width: 768px) {
+   #why-us {
+     display: none !important;
+   }
+}
 
+/* Hide header bullets on mobile */
+@media only screen and (max-width: 768px) {
+   .trust-bullets {
+     display: none !important; /* hide full list */
+   }
+}
 
-
-
-
-
-
+@media only screen and (max-width: 768px) {
+   #hero h4, /* nationwide line */
+   #hero .button.trial { /* top button */
+     display: none !important;
+   }
+}
