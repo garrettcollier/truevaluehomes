@@ -90,6 +90,9 @@
                   <li>✅ Any Condition, Any Situation</li>
                   <li>✅ 100% Free & Confidential</li>
                </ul>
+               <h4 style="margin-top:10px; font-size:1.1em; color:#fff;">
+                  We work with property owners nationwide – any location, any condition.
+               </h4>
             </div>
 
             <div class="buttons">
@@ -179,10 +182,10 @@
                   <input id="lead-first" type="text" name="first_name" autocomplete="given-name" required>
                </label>
               
-               <label for="lead-last">
+               <!-- <label for="lead-last">
                   <span>Last Name</span>
                   <input id="lead-last" type="text" name="last_name" autocomplete="family-name">
-               </label>
+               </label> -->
       
                <label for="lead-phone">
                   <span>Phone Number *</span>
@@ -198,7 +201,7 @@
                 </label>
       
                <label for="lead-address">
-                  <span>Address *</span>
+                  <span>Property Address *</span>
                   <input
                   id="lead-address"
                   type="text"
@@ -208,7 +211,7 @@
                   required>
                </label>
       
-               <label for="lead-reason">
+               <!-- <label for="lead-reason">
                   <span>Reason for Selling *</span>
                   <select id="lead-reason" name="reason" required>
                      <option value="">-- Please Select --</option>
@@ -245,10 +248,10 @@
                      <option value="Within 3 Days">Within 3 Days</option>
                      <option value="Next Week">Next Week</option>
                   </select>
-               </label>
+               </label> -->
 
                <label for="lead-email">
-                  <span>Email</span>
+                  <span>Email (optional - helps us reach you faster)</span>
                   <input id="lead-email" type="email" name="email" autocomplete="email" placeholder="you@example.com">
                </label>
       
@@ -256,8 +259,9 @@
       
                <p class="call-us">
                   Or Call Us For FREE<br>
-                  <a href="tel:5019139017" class="phone">501-913-9017</a>
+                  <a href="tel:5019139017" class="phone" onclick="if(window.fbq){fbq('track','Contact');}" >501-913-9017</a>
                </p>
+
             </form>
          </div>
 
@@ -265,14 +269,12 @@
 
    </section>
 
-   <section id="why-us">
+   <section id="why-us" style="background: black;">
 
 
       <div class="row feature responsive">
 
-         <div class="hero-text">
-            <h2>Benefits of Selling With Us</h2>
-         </div>
+         <h2 class="responsive-headline" style="color:#fff;">Benefits of Selling With Us</h2>
 
          <div class="comparison-container">
             <div class="comparison-column pros">
@@ -301,7 +303,35 @@
          </div>
       </div>
 
-   </section> <!-- Homepage Hero end -->
+      <div class="buttons">
+         <a class="button trial" href="#lead-form">Get My Free Cash Offer Now!</a>
+      </div> 
+
+   </section> <!-- Homepage Hero end -->  
+
+   <section id="trust" style="background:#f9f9f9; padding:50px 20px; text-align:center;">
+      <div class="row">
+        <h2 style="margin-bottom:20px;">Trusted Nationwide</h2>
+        <p style="max-width:700px; margin:0 auto 30px; font-size:1.1em; color:#333;">
+          True Value Homes works with property owners across the country, providing fair cash offers in
+          any condition, any situation. Our mission is simple: <strong>make selling your house fast, easy, and stress-free</strong>.
+        </p>
+        <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:20px;">
+          <div>
+            <h3 style="color:#10999E; font-size:2em;">24 hours</h3>
+            <p>Average time to receive an offer</p>
+          </div>
+          <div>
+            <h3 style="color:#10999E; font-size:2em;">0</h3>
+            <p>Fees or Commissions</p>
+          </div>
+          <div>
+            <h3 style="color:#10999E; font-size:2em;">Nationwide</h3>
+            <p>We buy in all 50 states</p>
+          </div>
+        </div>
+      </div>
+    </section>    
 
    <!-- reviews
    ==================================================
@@ -505,7 +535,7 @@
                <div class="flex-container">
                   <h3 class="contact">Contact Us</h3>
                   <ul>
-                    <li><a href="tel:5019139017">501-913-9017</a></li>
+                    <li><a href="tel:5019139017" onclick="if(window.fbq){fbq('track','Contact');}">501-913-9017</a></li>
                     <li><a href="mailto:leads@truevaluehomes.net">leads@truevaluehomes.net</a></li>
                   </ul>
                </div>
@@ -551,10 +581,12 @@
         })
         .then(res => res.json())
         .then(res => {
+            if (window.fbq) { fbq('track', 'Lead'); }  // 🔹 Track form submit
             // Redirect user directly to your branded page
             window.location.href = "https://truevaluehomes.net/thank-you.html";
         })
         .catch(err => {
+            if (window.fbq) { fbq('track', 'Lead'); }  // 🔹 Track even in error
             // fallback redirect even if the fetch fails
             window.location.href = "https://truevaluehomes.net/thank-you.html";
         });
