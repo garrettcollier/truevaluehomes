@@ -50,6 +50,7 @@
          <ul id="nav" class="nav">
             <li><a class="smoothscroll" href="#how-it-works">Join</a></li>
             <li><a class="smoothscroll" href="#faqs">FAQs</a></li>
+            <li><a class="smoothscroll" href="https://truevaluehomes.net/">Sellers</a></li>
          </ul> <!-- end #nav -->
 
       </nav> <!-- end #nav-wrap -->
@@ -159,12 +160,15 @@
                <!-- Honeypot bot submission field, if filled then bot as spam bots fill every field, response is ignored (doesn’t log it, doesn’t email)-->
                <input type="text" name="hp_trap" style="display:none" tabindex="-1" autocomplete="off">
                
-               <label for="lead-first">
+               <!-- Identify this form as buyer -->
+               <input type="hidden" name="formType" value="buyer">
+
+               <label for="buyer-name">
                   <span>Name *</span>
                   <input id="buyer-name" type="text" name="name" autocomplete="given-name" required>
                </label>
       
-               <label for="lead-phone">
+               <label for="buyer-phone">
                   <span>Phone Number *</span>
                   <input
                     id="buyer-phone"
@@ -177,12 +181,22 @@
                     required>
                </label>
                
-               <label for="lead-email">
+               <label for="buyer-email">
                   <span>Email *</span>
-                  <input id="lead-email" type="email" name="email" autocomplete="email" placeholder="you@example.com">
+                  <input id="buyer-email" type="email" name="email" autocomplete="email" placeholder="you@example.com">
                </label>
 
-               <label for="lead-address">
+               <label for="buyer-strategy">
+                  <span>Investment Strategy *</span>
+                  <select name="buyer-strategy">
+                     <option value="">-- Please Select --</option>
+                     <option value="Fix & Flip">Fix & Flip</option>
+                     <option value="Buy & Hold">Buy & Hold</option>
+                     <option value="Both">Both</option>
+                  </select>
+               </label>
+
+               <label for="buyer-market">
                   <span>Markets / States You Buy In *</span>
                   <input
                   id="buyer-market"
@@ -192,17 +206,7 @@
                   required>
                </label>
 
-               <label>
-                  <span>Investment Strategy *</span>
-                  <select name="timeline">
-                     <option value="">-- Please Select --</option>
-                     <option value="Fix & Flip">Fix & Flip</option>
-                     <option value="Buy & Hold">Buy & Hold</option>
-                     <option value="Both">Both</option>
-                  </select>
-               </label>
-
-               <label for="lead-email">
+               <label for="buyer-price">
                   <span>Preferred Price Range *</span>
                   <input id="buyer-price" type="text" name="price_range" placeholder="$50k - $200k+" required>
                </label>
